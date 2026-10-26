@@ -83,6 +83,8 @@ async function launchElectron(): Promise<void> {
     return
   }
   await run(electron, [
+    '--no-sandbox',
+    '--disable-gpu',
     `--inspect=127.0.0.1:${String(mainPort)}`,
     `--remote-debugging-port=${String(rendererPort)}`,
     `--user-data-dir=${userData}`,
